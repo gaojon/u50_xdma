@@ -1,5 +1,7 @@
 # u50_xdma design 
-Since the U50 Vivado flow is available, folks from hardare may be interested in u50 xdma design with Vivado flow. Here is the same example of XDMA and HBM to demostrate how to do data DMA from HBM and host memory.
+Since the U50 Vivado flow is available, folks from hardare may be interested in u50 xdma design with Vivado flow. Here is the simple example of XDMA and HBM to demostrate how to do data DMA from HBM and host memory. Here is the bd diagram.
+
+![System](./doc/bd.jpg)
 
 # Build the bitstream and MCS
 
@@ -7,6 +9,8 @@ Since the U50 Vivado flow is available, folks from hardare may be interested in 
 * Ubuntu 22.04
 * Vivado 23.2
 * Required licenses of used IPs
+* U50 acceleration card
+* Alveo debug cable 
 
 ## Build command
 ```
@@ -27,7 +31,7 @@ https://docs.amd.com/r/en-US/ug1371-u50-reconfig-accel/MCS-File-Generation-and-A
 * Perform a cold reboot on the host machine to complete the card update
 
 
-# Driver and testing on host
+# Compile Driver and run tests on host
 
 Here is the details of how to compile and run the test with XDMA drivers
 
@@ -44,6 +48,6 @@ $sudo modprobe xdma
 $cd ../tests
 
 $sudo ./load_driver.sh
-$sudo  ./run_test.sh
+$sudo ./run_test.sh
 
 ```
